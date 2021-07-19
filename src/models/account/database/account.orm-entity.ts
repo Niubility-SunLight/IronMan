@@ -17,5 +17,4 @@ export class AccountOrmEntity extends BaseOrmEntity {
 
   @Column()
   password: string;
-  
 }
