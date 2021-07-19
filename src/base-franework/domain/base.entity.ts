@@ -6,6 +6,7 @@ interface EntityProps {
   isDelete: boolean;
   deleteAt: DateVo;
 }
+
 export abstract class BaseDomainEntity<BaseDomainEntityProps> {
   protected readonly props: BaseDomainEntityProps;
   private readonly _createdAt: DateVo;
