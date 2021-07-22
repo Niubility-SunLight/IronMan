@@ -1,5 +1,5 @@
 import { BaseDomainEntity } from 'src/base-framework/domain/base.entity';
-interface AccountProps {
+export interface AccountProps {
   openId: string;
   unionId: string;
   mobile: string;
@@ -8,5 +8,18 @@ interface AccountProps {
 export class AccountEntity extends BaseDomainEntity<AccountProps> {
   constructor(props: AccountProps) {
     super(props);
+  }
+
+  get openId(): string {
+    return this.props.openId;
+  }
+  get unionId(): string {
+    return this.props.unionId;
+  }
+  get mobile(): string {
+    return this.props.mobile;
+  }
+  get password(): string {
+    return this.props.password;
   }
 }

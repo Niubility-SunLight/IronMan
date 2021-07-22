@@ -9,15 +9,21 @@ export interface BaseEntityProps {
 
 export abstract class BaseDomainEntity<BaseDomainEntityProps> {
   protected readonly props: BaseDomainEntityProps;
+  private readonly _id: number;
   private readonly _createdAt: DateVo;
   private _updatedAt: DateVo;
   private _isDelete: boolean;
   private _deletedAt: DateVo;
   constructor(props: BaseDomainEntityProps) {
     const now = DateVo.now();
+    this._id = 1;
     this._createdAt = now;
     this._updatedAt = now;
     this.props = props;
+  }
+
+  get id(): number {
+    return this._id;
   }
 
   get createdAt(): DateVo {
@@ -29,7 +35,7 @@ export abstract class BaseDomainEntity<BaseDomainEntityProps> {
   }
 
   get isDelete(): boolean {
-    return this.isDelete;
+    return this._isDelete;
   }
 
   get deletedAt(): DateVo {

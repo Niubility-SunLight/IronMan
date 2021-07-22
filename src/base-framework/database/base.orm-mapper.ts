@@ -2,7 +2,7 @@ import { BaseEntityProps } from '../domain/base.entity';
 import { BaseOrmEntity } from './base.orm-entity';
 export type OrmEntityProps<OrmEntity> = Omit<
   OrmEntity,
-  'id' | 'createdAt' | 'updatedAt'
+  'id' | 'createdAt' | 'updatedAt' | 'isDelete' | 'deletedAt'
 >;
 export abstract class BaseOrmMapper<Entity extends BaseEntityProps, OrmEntity> {
   constructor(
@@ -13,7 +13,7 @@ export abstract class BaseOrmMapper<Entity extends BaseEntityProps, OrmEntity> {
   protected abstract toDomainProps(ormEntity: OrmEntity): unknown;
   protected abstract toOrmProps(entity: Entity): OrmEntityProps<OrmEntity>;
 
-  protected toOrmEntity(entity: Entity): OrmEntity {
+  toOrmEntity(entity: Entity): OrmEntity {
     const props = this.toOrmProps(entity);
     return new this.ormEntityConstructor({
       ...props,
@@ -25,7 +25,7 @@ export abstract class BaseOrmMapper<Entity extends BaseEntityProps, OrmEntity> {
     });
   }
 
-  protected toDomainEntity(ormEntity: OrmEntity): Entity {
+  toDomainEntity(ormEntity: OrmEntity): Entity {
     const props = this.toDomainProps(ormEntity);
     const entity = this.assignPropsToEntity(props, ormEntity);
     return entity;
