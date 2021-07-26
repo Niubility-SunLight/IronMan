@@ -10,8 +10,8 @@ export abstract class BaseOrmMapper<Entity extends BaseEntityProps, OrmEntity> {
     private ormEntityConstructor: new (...args: any[]) => OrmEntity,
   ) {}
 
-  protected abstract toDomainProps(ormEntity: OrmEntity): unknown;
   protected abstract toOrmProps(entity: Entity): OrmEntityProps<OrmEntity>;
+  protected abstract toDomainProps(ormEntity: OrmEntity): unknown;
 
   toOrmEntity(entity: Entity): OrmEntity {
     const props = this.toOrmProps(entity);
