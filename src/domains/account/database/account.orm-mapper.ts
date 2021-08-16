@@ -1,9 +1,18 @@
+/*
+ * @Author: your name
+ * @Date: 2021-08-16 20:58:42
+ * @LastEditTime: 2021-08-16 22:02:37
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \IronMan\src\domains\account\database\account.orm-mapper.ts
+ */
 import { AccountOrmEntity } from './account.orm-entity';
-import { AccountEntity, AccountProps } from './../domain/account.entity';
+
 import {
   BaseOrmMapper,
   OrmEntityProps,
 } from 'src/base-framework/database/base.orm-mapper';
+import { AccountEntity, AccountProps } from '../models/account.entity';
 
 export class AccountOrmMapper extends BaseOrmMapper<
   AccountEntity,

@@ -1,6 +1,6 @@
 import { DateVo } from '../value-objects/date.value-object';
 export interface BaseEntityProps {
-  id: number;
+  id?: number;
   createdAt: DateVo;
   updatedAt: DateVo;
   isDelete: boolean;
@@ -19,6 +19,7 @@ export abstract class BaseDomainEntity<BaseDomainEntityProps> {
     this._id = 1;
     this._createdAt = now;
     this._updatedAt = now;
+    this._isDelete = false;
     this.props = props;
   }
 

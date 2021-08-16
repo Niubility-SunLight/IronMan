@@ -1,5 +1,17 @@
+/*
+ * @Author: Liu Liang
+ * @Date: 2021-07-22 20:53:10
+ * @LastEditTime: 2021-08-15 22:21:29
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \IronMan\src\base-framework\database\base.orm-mapper.ts
+ */
 import { BaseEntityProps } from '../domain/base.entity';
 import { BaseOrmEntity } from './base.orm-entity';
+
+/**
+ * @description TS 3.5后内置帮助类型，排除其他不需要的属性
+ */
 export type OrmEntityProps<OrmEntity> = Omit<
   OrmEntity,
   'id' | 'createdAt' | 'updatedAt' | 'isDelete' | 'deletedAt'

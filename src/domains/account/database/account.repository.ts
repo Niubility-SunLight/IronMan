@@ -1,11 +1,19 @@
+/*
+ * @Author: your name
+ * @Date: 2021-08-16 20:58:42
+ * @LastEditTime: 2021-08-16 22:01:41
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \IronMan\src\domains\account\database\account.repository.ts
+ */
 import { AccountOrmMapper } from './account.orm-mapper';
-import { AccountEntity } from './../domain/account.entity';
 import { AccountOrmEntity } from './account.orm-entity';
 import { IAccountRepository } from './account.repository.interface';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { BaseOrmRepository } from 'src/base-framework/database/base.orm-repository';
+import { AccountEntity } from '../models/account.entity';
 
 @Injectable()
 export class AccountRepository
