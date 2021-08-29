@@ -1,6 +1,6 @@
 import { Repository } from 'typeorm';
-import { BaseEntityProps } from './../domain/base.entity';
-import { BaseDomainEntity } from 'src/base-framework/domain/base.entity';
+import { BaseEntityProps } from '../base-class/base.entity';
+import { BaseDomainEntity } from 'src/base-framework/base-class/base.entity';
 import { BaseOrmMapper } from './base.orm-mapper';
 export abstract class BaseOrmRepository<
   Entity extends BaseEntityProps,

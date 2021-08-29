@@ -1,4 +1,4 @@
-import { BaseValueObject } from '../domain/base.value-object';
+import { BaseValueObject } from '../base-class/base.value-object';
 import dayjs from 'dayjs';
 export class DateVo extends BaseValueObject<Date> {
   constructor(value: Date | string | number) {

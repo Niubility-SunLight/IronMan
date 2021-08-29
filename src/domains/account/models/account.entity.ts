@@ -1,4 +1,4 @@
-import { BaseDomainEntity } from 'src/base-framework/domain/base.entity';
+import { BaseDomainEntity } from 'src/base-framework/base-class/base.entity';
 export interface AccountProps {
   openId: string;
   unionId: string;

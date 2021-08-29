@@ -6,7 +6,7 @@
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\base-framework\database\base.orm-mapper.ts
  */
-import { BaseEntityProps } from '../domain/base.entity';
+import { BaseEntityProps } from '../base-class/base.entity';
 import { BaseOrmEntity } from './base.orm-entity';
 
 /**
