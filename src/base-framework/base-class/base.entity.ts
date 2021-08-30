@@ -1,10 +1,18 @@
+/*
+ * @Author: your name
+ * @Date: 2021-08-30 11:26:30
+ * @LastEditTime: 2021-08-30 17:19:51
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /IronMan/src/base-framework/base-class/base.entity.ts
+ */
 import { DateVo } from '../value-objects/date.value-object';
 export interface BaseEntityProps {
   id?: number;
-  createdAt: DateVo;
-  updatedAt: DateVo;
+  createdAt?: DateVo;
+  updatedAt?: DateVo;
   isDelete: boolean;
-  deletedAt: DateVo;
+  deletedAt?: DateVo;
 }
 
 export abstract class BaseDomainEntity<BaseDomainEntityProps> {

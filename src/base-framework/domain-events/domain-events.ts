@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-08-30 11:26:30
+ * @LastEditTime: 2021-08-30 16:39:48
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /IronMan/src/base-framework/domain-events/domain-events.ts
+ */
 import { AggregateRoot } from '../base-class/aggregate-root';
 
 export class DomainEvents {
@@ -8,8 +16,9 @@ export class DomainEvents {
       this.aggregates.push(aggregate);
     }
   }
+  
   public static findAggregateByID(
-    id: string,
+    id: number,
   ): AggregateRoot<unknown> | undefined {
     for (const aggregate of this.aggregates) {
       // if (aggregate.id.equals(id)) {

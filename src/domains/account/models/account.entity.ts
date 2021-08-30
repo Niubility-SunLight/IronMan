@@ -1,11 +1,19 @@
-import { BaseDomainEntity } from 'src/base-framework/base-class/base.entity';
+/*
+ * @Author: your name
+ * @Date: 2021-08-30 11:26:30
+ * @LastEditTime: 2021-08-30 17:14:45
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /IronMan/src/domains/account/models/account.entity.ts
+ */
+import { AggregateRoot } from 'src/base-framework/base-class/aggregate-root';
 export interface AccountProps {
   openId: string;
   unionId: string;
   mobile: string;
   password: string;
 }
-export class AccountEntity extends BaseDomainEntity<AccountProps> {
+export class AccountEntity extends AggregateRoot<AccountProps> {
   constructor(props: AccountProps) {
     super(props);
   }
