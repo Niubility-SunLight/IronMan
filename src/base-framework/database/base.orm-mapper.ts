@@ -1,7 +1,7 @@
 /*
  * @Author: Liu Liang
  * @Date: 2021-07-22 20:53:10
- * @LastEditTime: 2021-08-15 22:21:29
+ * @LastEditTime: 2021-08-31 16:58:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\base-framework\database\base.orm-mapper.ts
@@ -55,7 +55,6 @@ export abstract class BaseOrmMapper<Entity extends BaseEntityProps, OrmEntity> {
     entityCopy.updatedAt = baseOrmEntity.updatedAt;
     entityCopy.isDelete = baseOrmEntity.isDelete;
     entityCopy.deletedAt = baseOrmEntity.deletedAt;
-
     return;
   }
 }
