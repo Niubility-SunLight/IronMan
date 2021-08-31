@@ -2,7 +2,7 @@ import { AccountProps } from './../models/account.entity';
 /*
  * @Author: your name
  * @Date: 2021-08-16 20:58:42
- * @LastEditTime: 2021-08-31 17:42:48
+ * @LastEditTime: 2021-08-31 19:34:12
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\domains\account\database\account.repository.ts
@@ -52,7 +52,7 @@ export class AccountRepository
   }
 
   async exists(openId: string): Promise<boolean> {
-    const found = await this.findOne();
+    const found = await this.accountRepository.findOne(openId);
     if (found) {
       return true;
     }
