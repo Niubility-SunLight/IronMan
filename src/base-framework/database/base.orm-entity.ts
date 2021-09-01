@@ -1,7 +1,7 @@
 /*
  * @Author: Liu Liang
  * @Date: 2021-07-19 22:15:53
- * @LastEditTime: 2021-08-15 22:06:20
+ * @LastEditTime: 2021-09-01 22:22:05
  * @LastEditors: Please set LastEditors
  * @Description: ORM基础实体
  * @FilePath: \IronMan\src\base-framework\database\base.orm-entity.ts
@@ -22,7 +22,7 @@ export abstract class BaseOrmEntity {
   }
 
   @PrimaryColumn({ type: 'int', update: false })
-  id!: string;
+  id?: string;
 
   @Column({ type: 'tinyint' })
   isDelete!: boolean;

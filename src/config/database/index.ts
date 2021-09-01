@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-07-20 21:38:55
+ * @LastEditTime: 2021-09-01 22:57:22
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \IronMan\src\config\database\index.ts
+ */
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 // 读取环境变量
 import { config } from 'dotenv-flow';
@@ -14,5 +22,5 @@ export const TypeOrmConfig: TypeOrmModuleOptions = {
   // entities: ['src/modules/**/*.orm-entity.{ts,js}'],
   synchronize: true,
   autoLoadEntities: true,
-  // logging: ['error', 'migration', 'schema'],
+  logging: ['error', 'migration', 'schema'],
 };

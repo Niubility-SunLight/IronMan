@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2021-08-30 11:26:30
- * @LastEditTime: 2021-08-31 17:39:41
- * @LastEditors: your name
+ * @LastEditTime: 2021-09-01 23:06:00
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /IronMan/src/domains/account/case/create-account/create-account.service.ts
  */
@@ -15,9 +15,10 @@ export class CreateAccountService {
     private readonly accountRepo: IAccountRepository,
   ) {}
 
-  async createUser(command: any): Promise<AccountEntity> {
+  async createAccount(command: any): Promise<AccountEntity> {
     const account = new AccountEntity(command);
-    return account;
+    const created = await this.accountRepo.save(account);
+    return created;
     // user uniqueness any
     // if (await this.userRepo.exists(command.email.value)) {
     //   throw new ConflictException('User already exists');

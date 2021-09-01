@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-08-31 19:29:10
+ * @LastEditTime: 2021-09-01 22:49:32
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \IronMan\src\base-framework\database\base.orm-repository.ts
+ */
 import { RepositoryPort } from './../ports/repository.ports';
 import { FindConditions, ObjectLiteral, Repository } from 'typeorm';
 import { BaseEntityProps } from '../base-class/base.entity';
@@ -39,6 +47,7 @@ export abstract class BaseOrmRepository<
 
   async save(entity: Entity): Promise<Entity> {
     const ormEntity = this.mapper.toOrmEntity(entity);
+    console.log(ormEntity);
     const result = await this.repository.save(ormEntity);
     console.log('[Entity persisted]');
     return this.mapper.toDomainEntity(result);
