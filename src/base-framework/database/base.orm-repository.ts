@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-31 19:29:10
- * @LastEditTime: 2021-09-01 22:49:32
+ * @LastEditTime: 2021-09-02 17:58:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\base-framework\database\base.orm-repository.ts
@@ -47,8 +47,8 @@ export abstract class BaseOrmRepository<
 
   async save(entity: Entity): Promise<Entity> {
     const ormEntity = this.mapper.toOrmEntity(entity);
-    console.log(ormEntity);
     const result = await this.repository.save(ormEntity);
+    console.log(result)
     console.log('[Entity persisted]');
     return this.mapper.toDomainEntity(result);
   }

@@ -1,7 +1,7 @@
 /*
  * @Author: Liu Liang
  * @Date: 2021-07-22 20:53:10
- * @LastEditTime: 2021-08-31 16:58:49
+ * @LastEditTime: 2021-09-02 17:57:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\base-framework\database\base.orm-mapper.ts
@@ -39,6 +39,7 @@ export abstract class BaseOrmMapper<Entity extends BaseEntityProps, OrmEntity> {
 
   toDomainEntity(ormEntity: OrmEntity): Entity {
     const props = this.toDomainProps(ormEntity);
+    console.log(props)
     const entity = this.assignPropsToEntity(props, ormEntity);
     return entity;
   }
@@ -50,11 +51,11 @@ export abstract class BaseOrmMapper<Entity extends BaseEntityProps, OrmEntity> {
     const entityCopy: any = Object.create(this.entityConstructor.prototype);
     const baseOrmEntity: BaseOrmEntity = ormEntity as unknown as BaseOrmEntity;
     entityCopy.props = entityProps;
-    entityCopy.id = baseOrmEntity.id;
-    entityCopy.createdAt = baseOrmEntity.createdAt;
-    entityCopy.updatedAt = baseOrmEntity.updatedAt;
-    entityCopy.isDelete = baseOrmEntity.isDelete;
-    entityCopy.deletedAt = baseOrmEntity.deletedAt;
+    entityCopy._id = baseOrmEntity.id;
+    entityCopy._createdAt = baseOrmEntity.createdAt;
+    entityCopy._updatedAt = baseOrmEntity.updatedAt;
+    entityCopy._isDelete = baseOrmEntity.isDelete;
+    entityCopy._deletedAt = baseOrmEntity.deletedAt;
     return;
   }
 }

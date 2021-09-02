@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-16 20:58:42
- * @LastEditTime: 2021-08-16 22:02:37
+ * @LastEditTime: 2021-09-02 17:49:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\domains\account\database\account.orm-mapper.ts
@@ -19,6 +19,7 @@ export class AccountOrmMapper extends BaseOrmMapper<
   AccountOrmEntity
 > {
   protected toDomainProps(ormEntity: AccountOrmEntity): AccountProps {
+    console.log('toDomainProps', ormEntity);
     const props: AccountProps = {
       openId: ormEntity.openId,
       unionId: ormEntity.unionId,

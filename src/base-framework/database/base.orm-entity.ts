@@ -1,14 +1,14 @@
 /*
  * @Author: Liu Liang
  * @Date: 2021-07-19 22:15:53
- * @LastEditTime: 2021-09-01 22:22:05
+ * @LastEditTime: 2021-09-02 17:45:30
  * @LastEditors: Please set LastEditors
  * @Description: ORM基础实体
  * @FilePath: \IronMan\src\base-framework\database\base.orm-entity.ts
  */
 import {
   CreateDateColumn,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
   Column,
   UpdateDateColumn,
   DeleteDateColumn,
@@ -21,8 +21,8 @@ export abstract class BaseOrmEntity {
     }
   }
 
-  @PrimaryColumn({ type: 'int', update: false })
-  id?: string;
+  @PrimaryGeneratedColumn()
+  id!: string;
 
   @Column({ type: 'tinyint' })
   isDelete!: boolean;
