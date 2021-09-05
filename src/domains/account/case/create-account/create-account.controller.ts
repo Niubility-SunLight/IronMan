@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-16 21:32:33
- * @LastEditTime: 2021-09-04 21:29:49
+ * @LastEditTime: 2021-09-05 21:12:39
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\domains\account\case\create-account\create-account.controller.ts
@@ -19,7 +19,7 @@ export class CreateAccountHttpController {
     private readonly createAccount: CreateAccountService,
   ) {}
 
-  @Post('test')
+  @Post('createAccount')
   @ApiOperation({ summary: '创建账号' })
   @ApiResponse({
     status: HttpStatus.OK,

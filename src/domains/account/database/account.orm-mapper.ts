@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-16 20:58:42
- * @LastEditTime: 2021-09-03 12:38:56
+ * @LastEditTime: 2021-09-05 22:31:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\domains\account\database\account.orm-mapper.ts
@@ -35,6 +35,7 @@ export class AccountOrmMapper extends BaseOrmMapper<
       unionId: entity.unionId,
       mobile: entity.mobile,
       password: entity.password,
+      userRoles: undefined
     };
     return ormProps;
   }
