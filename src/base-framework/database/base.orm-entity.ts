@@ -1,7 +1,7 @@
 /*
  * @Author: Liu Liang
  * @Date: 2021-07-19 22:15:53
- * @LastEditTime: 2021-09-02 17:45:30
+ * @LastEditTime: 2021-09-06 13:46:42
  * @LastEditors: Please set LastEditors
  * @Description: ORM基础实体
  * @FilePath: \IronMan\src\base-framework\database\base.orm-entity.ts
@@ -22,9 +22,9 @@ export abstract class BaseOrmEntity {
   }
 
   @PrimaryGeneratedColumn()
-  id!: string;
+  id!: number;
 
-  @Column({ type: 'tinyint' })
+  @Column({ type: 'tinyint', default: 0 })
   isDelete!: boolean;
 
   @CreateDateColumn({ type: 'timestamp' })

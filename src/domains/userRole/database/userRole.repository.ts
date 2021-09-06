@@ -1,13 +1,12 @@
-import { UserRoleEntity, UserRoleProps } from '../models/userRole.entity';
 /*
  * @Author: your name
  * @Date: 2021-08-16 20:58:42
- * @LastEditTime: 2021-09-05 22:20:37
+ * @LastEditTime: 2021-09-06 15:59:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\domains\userRole\database\userRole.repository.ts
  */
-
+import { UserRoleEntity, UserRoleProps } from '../models/userRole.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';

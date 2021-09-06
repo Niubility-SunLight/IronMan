@@ -1,7 +1,9 @@
+import { UserRoleEntity } from './../../userRole/models/userRole.entity';
+import { UserRoleResponse } from './../../userRole/models/account-response.entity';
 /*
  * @Author: your name
  * @Date: 2021-09-03 15:26:33
- * @LastEditTime: 2021-09-04 21:24:24
+ * @LastEditTime: 2021-09-06 13:50:31
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /IronMan/src/domains/account/case/create-account/create-account.responst.ts
@@ -19,6 +21,7 @@ export class AccountResponse extends BaseResponseEntity implements Account {
     this.openId = props.openId;
     this.unionId = props.unionId;
     this.mobile = props.mobile;
+    this.userRoles = props.userRoles;
   }
 
   @ApiProperty({
@@ -36,4 +39,11 @@ export class AccountResponse extends BaseResponseEntity implements Account {
     description: '用户手机号',
   })
   mobile: string;
+
+  @ApiProperty({
+    example: '账户角色',
+    type: UserRoleResponse,
+    description: '用户手机号',
+  })
+  userRoles: UserRoleEntity[];
 }

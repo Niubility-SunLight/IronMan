@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-09-06 09:40:59
+ * @LastEditTime: 2021-09-06 15:32:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /IronMan/src/domains/account/database/account.orm-entity.ts
+ */
 import { BaseOrmEntity } from 'src/base-framework/database/base.orm-entity';
 import { UserRoleOrmEntity } from 'src/domains/userRole/database/userRole.orm-entity';
 import { Entity, Column, OneToMany } from 'typeorm';
@@ -20,8 +28,11 @@ export class AccountOrmEntity extends BaseOrmEntity {
   password: string;
 
   @OneToMany(
-    (type) => UserRoleOrmEntity,
+    () => UserRoleOrmEntity,
     (userRoleOrmEntity: UserRoleOrmEntity) => userRoleOrmEntity.account,
+    // {
+    //   cascade: true,
+    // },
   ) // note: we will create author property in the Photo class below
   userRoles: UserRoleOrmEntity[];
 }
