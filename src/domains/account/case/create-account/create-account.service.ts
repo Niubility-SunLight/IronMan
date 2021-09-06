@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-30 11:26:30
- * @LastEditTime: 2021-09-06 15:50:28
+ * @LastEditTime: 2021-09-06 20:21:56
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /IronMan/src/domains/account/case/create-account/create-account.service.ts
@@ -16,15 +16,12 @@ export class CreateAccountService {
   constructor(
     // no direct dependency on a repository, instead depends on a port
     private readonly accountRepo: IAccountRepository,
-    private readonly userRoleRepo: IUserRoleRepository,
   ) {}
 
   async createAccount(command: any): Promise<AccountResponse> {
     const account = new AccountEntity(command);
     const student = new UserRoleEntity({ roleType: 1 });
     const teacher = new UserRoleEntity({ roleType: 2 });
-    await this.userRoleRepo.save(student);
-    await this.userRoleRepo.save(teacher);
     account.userRoles = [student, teacher];
     const created = await this.accountRepo.save(account);
     return new AccountResponse(created);

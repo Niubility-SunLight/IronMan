@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-09-06 09:40:59
- * @LastEditTime: 2021-09-06 15:32:14
+ * @LastEditTime: 2021-09-06 17:26:23
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /IronMan/src/domains/account/database/account.orm-entity.ts
@@ -30,9 +30,9 @@ export class AccountOrmEntity extends BaseOrmEntity {
   @OneToMany(
     () => UserRoleOrmEntity,
     (userRoleOrmEntity: UserRoleOrmEntity) => userRoleOrmEntity.account,
-    // {
-    //   cascade: true,
-    // },
+    {
+      cascade: true,
+    },
   ) // note: we will create author property in the Photo class below
   userRoles: UserRoleOrmEntity[];
 }

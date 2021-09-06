@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-09-05 21:11:02
- * @LastEditTime: 2021-09-06 15:29:50
+ * @LastEditTime: 2021-09-06 17:42:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\domains\userRole\database\account.orm-entity.ts
@@ -19,12 +19,10 @@ export class UserRoleOrmEntity extends BaseOrmEntity {
     (type) => AccountOrmEntity,
     (accountOrmEntity: AccountOrmEntity) => accountOrmEntity.userRoles,
   )
-  // @JoinColumn()
+  @JoinColumn({ name: 'accountId' })
   account?: AccountOrmEntity;
 
-  @RelationId(
-    (userRoleOrmEntity: UserRoleOrmEntity) => userRoleOrmEntity.account,
-  )
+  @Column()
   accountId: number;
 
   @Column()

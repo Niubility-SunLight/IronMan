@@ -1,7 +1,7 @@
 /*
  * @Author: Liu Liang
  * @Date: 2021-07-22 20:53:10
- * @LastEditTime: 2021-09-03 16:12:27
+ * @LastEditTime: 2021-09-06 17:45:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\base-framework\database\base.orm-mapper.ts
@@ -39,7 +39,7 @@ export abstract class BaseOrmMapper<Entity extends BaseEntityProps, OrmEntity> {
 
   toDomainEntity(ormEntity: OrmEntity): Entity {
     const props = this.toDomainProps(ormEntity);
-    console.log(props);
+    console.log('props', props);
     const entity = this.assignPropsToEntity(props, ormEntity);
     return entity;
   }

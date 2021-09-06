@@ -3,7 +3,7 @@ import { UserRoleResponse } from './../../userRole/models/account-response.entit
 /*
  * @Author: your name
  * @Date: 2021-09-03 15:26:33
- * @LastEditTime: 2021-09-06 13:50:31
+ * @LastEditTime: 2021-09-06 17:55:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /IronMan/src/domains/account/case/create-account/create-account.responst.ts
@@ -15,13 +15,15 @@ import { AccountEntity, AccountProps } from './account.entity';
 
 type Account = Omit<AccountProps & BaseEntityProps, 'password'>;
 
-export class AccountResponse extends BaseResponseEntity implements Account {
+export class AccountResponse extends BaseResponseEntity {
   constructor(props: AccountEntity) {
     super(props);
     this.openId = props.openId;
     this.unionId = props.unionId;
     this.mobile = props.mobile;
-    this.userRoles = props.userRoles;
+    this.userRoles = props.userRoles.map(
+      (v: UserRoleEntity) => new UserRoleResponse(v),
+    );
   }
 
   @ApiProperty({
@@ -45,5 +47,5 @@ export class AccountResponse extends BaseResponseEntity implements Account {
     type: UserRoleResponse,
     description: '用户手机号',
   })
-  userRoles: UserRoleEntity[];
+  userRoles: UserRoleResponse[];
 }

@@ -2,7 +2,7 @@ import { UserRoleEntity } from './../../userRole/models/userRole.entity';
 /*
  * @Author: your name
  * @Date: 2021-08-30 11:26:30
- * @LastEditTime: 2021-09-06 13:07:22
+ * @LastEditTime: 2021-09-06 19:32:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /IronMan/src/domains/account/models/account.entity.ts
@@ -18,6 +18,7 @@ export interface AccountProps {
 export class AccountEntity extends AggregateRoot<AccountProps> {
   constructor(props: AccountProps) {
     super(props);
+    // this.addEvent()
   }
 
   get openId(): string {
