@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-30 11:26:30
- * @LastEditTime: 2021-09-02 17:44:32
+ * @LastEditTime: 2021-09-06 21:58:04
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /IronMan/src/base-framework/base-class/base.entity.ts
@@ -17,10 +17,10 @@ export interface BaseEntityProps {
 
 export abstract class BaseDomainEntity<BaseDomainEntityProps> {
   constructor(props: BaseDomainEntityProps) {
-    const now = DateVo.now();
-    this._createdAt = now;
-    this._updatedAt = now;
-    this._deletedAt = now;
+    // const now = DateVo.now();
+    // this._createdAt = now;
+    // this._updatedAt = now;
+    // this._deletedAt = now;
     this._isDelete = false;
     this.props = props;
   }
