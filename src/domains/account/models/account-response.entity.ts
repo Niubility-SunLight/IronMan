@@ -1,13 +1,13 @@
-import { UserRoleEntity } from './../../userRole/models/userRole.entity';
-import { UserRoleResponse } from './../../userRole/models/account-response.entity';
 /*
  * @Author: your name
  * @Date: 2021-09-03 15:26:33
- * @LastEditTime: 2021-09-06 17:55:29
+ * @LastEditTime: 2021-09-06 20:49:16
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /IronMan/src/domains/account/case/create-account/create-account.responst.ts
  */
+import { UserRoleEntity } from './../../userRole/models/userRole.entity';
+import { UserRoleResponse } from './../../userRole/models/account-response.entity';
 import { BaseEntityProps } from 'src/base-framework/base-class/base.entity';
 import { ApiProperty } from '@nestjs/swagger';
 import { BaseResponseEntity } from 'src/base-framework/base-class/base.response';
@@ -43,8 +43,7 @@ export class AccountResponse extends BaseResponseEntity {
   mobile: string;
 
   @ApiProperty({
-    example: '账户角色',
-    type: UserRoleResponse,
+    type: [UserRoleResponse],
     description: '用户手机号',
   })
   userRoles: UserRoleResponse[];
