@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-09-04 20:54:30
- * @LastEditTime: 2021-09-04 21:16:13
+ * @LastEditTime: 2021-09-07 09:44:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\base-framework\base-class\base.response.ts
@@ -33,12 +33,12 @@ export abstract class BaseResponseEntity {
   })
   updatedAt: string;
   @ApiProperty({
-    example: '2021-09-14 13:55:55:55',
-    description: '最后修改时间',
+    example: 'false',
+    description: '是否删除',
   })
   isDelete: boolean;
   @ApiProperty({
-    example: '2021-09-14 13:55:55:55',
+    example: null,
     description: '删除时间',
   })
   deletedAt: string;

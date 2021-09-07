@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-16 21:32:33
- * @LastEditTime: 2021-09-05 21:12:39
+ * @LastEditTime: 2021-09-07 17:29:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\domains\account\case\create-account\create-account.controller.ts
@@ -32,7 +32,7 @@ export class CreateAccountHttpController {
   @ApiResponse({
     status: HttpStatus.BAD_REQUEST,
   })
-  async create(@Body() body: CreateAccountRequest): Promise<AccountResponse> {
+  async create(@Body() body: CreateAccountRequest): Promise<any> {
     const params = new CreateAccountRequest(body);
     const account = await this.createAccount.createAccount(params);
     console.log(`This action returns all cats ${body}`);

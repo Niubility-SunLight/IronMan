@@ -1,21 +1,22 @@
 /*
  * @Author: your name
  * @Date: 2021-09-03 15:26:33
- * @LastEditTime: 2021-09-06 20:49:16
+ * @LastEditTime: 2021-09-07 16:21:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /IronMan/src/domains/account/case/create-account/create-account.responst.ts
  */
 import { UserRoleEntity } from './../../userRole/models/userRole.entity';
-import { UserRoleResponse } from './../../userRole/models/account-response.entity';
+import { UserRoleResponse } from '../../userRole/models/userRole-response.entity';
 import { BaseEntityProps } from 'src/base-framework/base-class/base.entity';
 import { ApiProperty } from '@nestjs/swagger';
 import { BaseResponseEntity } from 'src/base-framework/base-class/base.response';
 import { AccountEntity, AccountProps } from './account.entity';
 
-type Account = Omit<AccountProps & BaseEntityProps, 'password'>;
+type Account = Omit<AccountProps & BaseEntityProps, 'password' | 'userRoles'> &
+  Record<'userRoles', UserRoleResponse[]>;
 
-export class AccountResponse extends BaseResponseEntity {
+export class AccountResponse extends BaseResponseEntity implements Account {
   constructor(props: AccountEntity) {
     super(props);
     this.openId = props.openId;
@@ -44,7 +45,7 @@ export class AccountResponse extends BaseResponseEntity {
 
   @ApiProperty({
     type: [UserRoleResponse],
-    description: '用户手机号',
+    description: '用户角色列表',
   })
   userRoles: UserRoleResponse[];
 }
