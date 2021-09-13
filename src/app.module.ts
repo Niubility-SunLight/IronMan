@@ -2,7 +2,7 @@ import { AuthModule } from './domains/auth/auth/auth.module';
 /*
  * @Author: your name
  * @Date: 2021-07-20 21:38:55
- * @LastEditTime: 2021-09-07 20:30:14
+ * @LastEditTime: 2021-09-13 21:31:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\app.module.ts

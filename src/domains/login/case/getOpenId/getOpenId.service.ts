@@ -1,14 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2021-09-07 22:14:23
- * @LastEditTime: 2021-09-07 22:37:07
+ * @LastEditTime: 2021-09-13 21:57:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\domains\login\case\getOpenId\getOpenId.service.ts
  */
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
-import { Observable } from 'rxjs';
+import { Observable, lastValueFrom } from 'rxjs';
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 export interface WeChatAuthCode {
   openid: string;
@@ -20,10 +20,31 @@ export interface WeChatAuthCode {
 @Injectable()
 export class GetOpenIdService {
   constructor(private readonly httpService: HttpService) {}
-  getOpenId(jscode: string): Observable<AxiosResponse<WeChatAuthCode>> {
-    const weChatAuthCode = this.httpService.get<WeChatAuthCode>(
-      `https://api.weixin.qq.com/sns/jscode2session?appid=wxb0658b12619f4c6e&secret=d7e6cf30bcd90c47b621591f2229c896&js_code=asdsaddddsdadadadasd&grant_type=authorization_code`,
+  async getOpenId(jscode: string) {
+    const weChatAuthCode = await lastValueFrom(
+      this.httpService.get(
+        `https://api.weixin.qq.com/sns/jscode2session?appid=wxb0658b12619f4c6e&secret=d7e6cf30bcd90c47b621591f2229c896&js_code=asdsaddddsdadadadasd&grant_type=authorization_code`,
+      ),
     );
-    return weChatAuthCode;
+    return weChatAuthCode.data;
+    // await this.httpService
+    //   .get<WeChatAuthCode>(
+    //     `https://api.weixin.qq.com/sns/jscode2session?appid=wxb0658b12619f4c6e&secret=d7e6cf30bcd90c47b621591f2229c896&js_code=asdsaddddsdadadadasd&grant_type=authorization_code`,
+    //     // `https://www.juhe.cn/docs/api/id/235`,
+    //   )
+    //   .subscribe({
+    //     next(x) {
+    //       return x;
+    //       console.log('got value ' + x);
+    //     },
+    //     error(err) {
+    //       return null;
+    //       console.error('something wrong occurred: ' + err);
+    //     },
+    //     complete() {
+    //       return null;
+    //       console.log('done');
+    //     },
+    //   });
   }
 }
