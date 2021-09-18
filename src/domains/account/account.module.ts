@@ -13,8 +13,8 @@ import { Module } from '@nestjs/common';
 import { createAccountProvider } from './account.providers';
 import { CreateAccountHttpController } from './case/create-account/create-account.controller';
 import { AccountRepository } from './database/account.repository';
-import { AuthModule } from '../auth/auth/auth.module';
-import { AuthService } from '../auth/auth/auth.service';
+import { AuthModule } from '../auth/auth.module';
+import { AuthService } from '../auth/auth.service';
 @Module({
   imports: [TypeOrmModule.forFeature([AccountOrmEntity])],
   controllers: [CreateAccountHttpController],
