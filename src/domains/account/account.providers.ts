@@ -10,7 +10,7 @@
 import { Provider } from '@nestjs/common';
 import { CreateAccountService } from './case/create-account/create-account.service';
 import { AccountRepository } from './database/account.repository';
-import { AuthService } from '../auth/auth/auth.service';
+import { AuthService } from '../auth/auth.service';
 export const createAccountSymbol = Symbol('createAccount');
 
 export const createAccountProvider: Provider = {
