@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-16 21:32:33
- * @LastEditTime: 2021-09-18 17:38:24
+ * @LastEditTime: 2021-09-19 16:22:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\domains\account\case\create-account\create-account.controller.ts
@@ -16,6 +16,7 @@ import {
   Param,
   Post,
   Query,
+  Request,
   UseGuards,
 } from '@nestjs/common';
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
@@ -46,6 +47,8 @@ export class GetOpenIdHttpController {
   })
   @UseGuards(JwtAuthGuard)
   create(@Query('jscode') jscode: string) {
+    // create(@Request() req) {
+    // console.log(req);
     const account = this.service.getOpenId(jscode);
     return account;
   }

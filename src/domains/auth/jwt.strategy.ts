@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-09-18 17:00:28
- * @LastEditTime: 2021-09-18 17:56:33
+ * @LastEditTime: 2021-09-19 10:17:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /IronMan/src/domains/auth/jwt.strategy.ts
@@ -15,6 +15,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor() {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      // jwtFromRequest: ExtractJwt.fromHeader('Authorization'),
       ignoreExpiration: false,
       secretOrKey: '123456',
     });
