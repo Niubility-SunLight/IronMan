@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-30 11:26:30
- * @LastEditTime: 2021-09-07 19:31:19
+ * @LastEditTime: 2021-09-22 16:57:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /IronMan/src/domains/account/case/create-account/create-account.service.ts
@@ -26,8 +26,12 @@ export class CreateAccountService {
     const teacher = new UserRoleEntity({ roleType: 2 });
     account.userRoles = [student, teacher];
     const created = await this.accountRepo.save(account);
-    const token = this.service.createToken({ id: account.id });
-    new HttpService().get('http://localhost:3000/cats');
+    const token = this.service.createToken({
+      id: account.id,
+      role: 'STUDENT',
+      roleId: 1,
+      vipExpiresTime: '2021-12-22 08:00',
+    });
     return { message: new AccountResponse(created), token };
   }
 }

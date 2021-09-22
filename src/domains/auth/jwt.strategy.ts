@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-09-18 17:00:28
- * @LastEditTime: 2021-09-19 10:17:29
+ * @LastEditTime: 2021-09-22 16:14:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /IronMan/src/domains/auth/jwt.strategy.ts
