@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-16 21:32:33
- * @LastEditTime: 2021-09-22 17:17:41
+ * @LastEditTime: 2021-09-23 13:51:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\domains\account\case\create-account\create-account.controller.ts
@@ -46,7 +46,7 @@ export class GetOpenIdHttpController {
   @ApiResponse({
     status: HttpStatus.BAD_REQUEST,
   })
-  @SetMetadata('roles', ['admin','adasdas'])
+  @SetMetadata('roles', ['admin', 'adasdas'])
   @UseGuards(JwtAuthGuard, RolesGuard)
   create(@Query('jscode') jscode: string) {
     // create(@Request() req) {
