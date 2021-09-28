@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-09-07 19:35:30
- * @LastEditTime: 2021-09-19 09:52:39
+ * @LastEditTime: 2021-09-23 15:46:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /IronMan/src/domains/login/login.module.ts
@@ -14,7 +14,7 @@ import { getOpenIdProvider } from './login.providers';
 import { AuthModule } from '../auth/auth.module';
 
 @Module({
-  imports: [HttpModule, AuthModule],
+  imports: [HttpModule],
   controllers: [GetOpenIdHttpController],
   providers: [GetOpenIdService, getOpenIdProvider],
 })

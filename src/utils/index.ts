@@ -1,18 +1,20 @@
 /*
  * @Author: your name
  * @Date: 2021-07-08 21:52:37
- * @LastEditTime: 2021-09-06 23:09:35
- * @LastEditors: your name
+ * @LastEditTime: 2021-09-23 14:58:03
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \IronMan\src\utils\index.ts
  */
-class MiniAppKit {
+
+import crypto from 'crypto';
+export class WeChatKit {
 //   static decryptData(sessionkey: string, encryptedData, iv) {
 //     // base64 decode
 //     const appId = this.app.config.appid;
-//     const sessionKey = Buffer(sessionkey, 'base64');
-//     encryptedData = Buffer(encryptedData, 'base64');
-//     iv = Buffer(iv, 'base64');
+//     const sessionKey = Buffer.from(sessionkey, 'base64');
+//     encryptedData = Buffer.from(encryptedData, 'base64');
+//     iv = Buffer.from(iv, 'base64');
 //     let decoded;
 //     try {
 //       // 解密
@@ -25,11 +27,9 @@ class MiniAppKit {
 //     } catch (err) {
 //       throw new Error('Illegal Buffer');
 //     }
-
 //     if (decoded.watermark.appid !== appId) {
 //       throw new Error('Illegal Buffer');
 //     }
-
 //     return decoded;
 //   }
 }
